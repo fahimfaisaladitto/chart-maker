@@ -1,0 +1,55 @@
+/* --- Custom CSS Variables for Theming --- */
+:root {
+    --bg-body: #f3f4f6;
+    --bg-card: rgba(255, 255, 255, 0.5);
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --border-card: rgba(255, 255, 255, 0.4);
+    --toggle-bg: #d1d5db;
+    --toggle-ball-bg: #ffffff;
+    --accent-color: #008cff;
+    --input-bg: rgba(0, 0, 0, 0.05);
+    --result-bg: rgba(0, 0, 0, 0.05);
+}
+
+html.dark {
+    --bg-body: #111827;
+    --bg-card: rgba(31, 41, 55, 0.5);
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --border-card: rgba(55, 65, 81, 0.5);
+    --toggle-bg: #374151;
+    --toggle-ball-bg: #111827;
+    --input-bg: rgba(0, 0, 0, 0.2);
+    --result-bg: rgba(0, 0, 0, 0.2);
+}
+
+/* --- Applying Variables --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+.main-card {
+    background-color: var(--bg-card);
+    border-color: var(--border-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.toggle-bg { background-color: var(--toggle-bg); }
+.toggle-ball { background-color: var(--toggle-ball-bg); }
+.accent-text { color: var(--accent-color); }
+.input-field { 
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
